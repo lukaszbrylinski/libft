@@ -6,7 +6,7 @@
 #    By: lbrylins <lbrylins@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/03 15:04:31 by lbrylins          #+#    #+#              #
-#    Updated: 2024/12/03 15:45:46 by lbrylins         ###   ########.fr        #
+#    Updated: 2024/12/04 20:44:01 by lbrylins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ NAME = libft.a
 AR = ar rcs
 
 $(NAME): $(OBJS)
-	$(AR) $(NAME) $(OBJS)  # Corrected line
+	$(AR) $(NAME) $(OBJS)
 
 %.o: %.c 
 	$(CC) $(CFLAGS) -c $< -o $@

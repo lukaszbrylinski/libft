@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbrylins <lbrylins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/01 16:33:48 by lbrylins          #+#    #+#             */
-/*   Updated: 2024/12/04 20:47:25 by lbrylins         ###   ########.fr       */
+/*   Created: 2024/12/04 20:41:22 by lbrylins          #+#    #+#             */
+/*   Updated: 2024/12/04 20:57:35 by lbrylins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include <stdlib.h>
+
+int	ft_strlen(char *str)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	else
-		return (0);
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
+size_t	strlcat(char *dst, const char *src, size_t dstsize)
+{
+	while (*dst)
+		dst++;
+	
 }
