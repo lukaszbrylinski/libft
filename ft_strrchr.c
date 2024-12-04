@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbrylins <lbrylins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/01 16:33:48 by lbrylins          #+#    #+#             */
-/*   Updated: 2024/12/04 21:18:37 by lbrylins         ###   ########.fr       */
+/*   Created: 2024/12/04 21:29:56 by lbrylins          #+#    #+#             */
+/*   Updated: 2024/12/04 21:44:10 by lbrylins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+char	*ft_strrchr(const char *str, int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	else
-		return (0);
+	int	i;
+
+	c = (unsigned char *)c;
+	i = 0;
+	while (str[i])
+		i++;
+	i -= 1;
+	while (i > 0)
+	{
+		if (str[i] == c)
+			return (str[i]);
+		i--;
+	}
+	return (0);
 }
