@@ -6,13 +6,14 @@
 /*   By: lbrylins <lbrylins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 20:23:07 by lbrylins          #+#    #+#             */
-/*   Updated: 2024/12/04 20:34:08 by lbrylins         ###   ########.fr       */
+/*   Updated: 2024/12/08 03:01:48 by lbrylins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "libft.h"
 
-int	count_str_len(char *str)
+int	count_str_len(const char *str)
 {
 	int	i;
 
@@ -24,20 +25,20 @@ int	count_str_len(char *str)
 	return (i);
 }
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcpy(char *dest, const char *src, unsigned int size)
 {
 	unsigned int	i;
 
 	i = 0;
 	if (size == 0)
 	{
-		return (size);
+		return (count_str_len(src));
 	}
-	while (i < size - 1)
+	while (i < size - 1 && src[i])
 	{
 		dest[i] = src[i];
 		i++;
 	}
 	dest[i] = '\0';
-	return (count_str_len(dest));
+	return (count_str_len(src));
 }

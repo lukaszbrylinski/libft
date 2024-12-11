@@ -6,22 +6,23 @@
 /*   By: lbrylins <lbrylins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 18:38:57 by lbrylins          #+#    #+#             */
-/*   Updated: 2024/12/04 20:34:11 by lbrylins         ###   ########.fr       */
+/*   Updated: 2024/12/08 03:46:15 by lbrylins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t	i;
-	char	*ch_dest;
-	char	*ch_src;
+	unsigned char	*ch_dest;
+	unsigned char	*ch_src;
 
-	ch_dest = (char *)dest;
-	ch_src = (char *)src;
+	ch_dest = (unsigned char *)dest;
+	ch_src = (unsigned char *)src;
 	if (dest < src)
 	{
 		i = 0;
@@ -33,11 +34,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	else
 	{
-		i = n - 1;
+		i = n;
 		while (i > 0)
 		{
-			ch_dest[i - 1] = ch_src[i - 1];
 			i--;
+			ch_dest[i] = ch_src[i];
 		}
 	}
 	return (dest);

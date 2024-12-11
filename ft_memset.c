@@ -6,22 +6,25 @@
 /*   By: lbrylins <lbrylins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 16:53:32 by lbrylins          #+#    #+#             */
-/*   Updated: 2024/12/03 15:47:12 by lbrylins         ###   ########.fr       */
+/*   Updated: 2024/12/08 03:49:49 by lbrylins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memset(void *ptr, int value, size_t num)
 {
-	unsigned int		i;
-	char				*ch_ptr;
+	size_t		i;
+	unsigned char		*ch_ptr;
+	unsigned char		val;
 
-	ch_ptr = (char *)ptr;
+	val = (unsigned char)value;
+	ch_ptr = (unsigned char *)ptr;
 	i = 0;
 	while (i < num)
 	{
-		ch_ptr[i] = value;
+		ch_ptr[i] = val;
 		i++;
 	}
 	return (ptr);

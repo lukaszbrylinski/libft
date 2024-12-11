@@ -6,32 +6,37 @@
 /*   By: lbrylins <lbrylins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 23:20:41 by lbrylins          #+#    #+#             */
-/*   Updated: 2024/12/04 23:42:11 by lbrylins         ###   ########.fr       */
+/*   Updated: 2024/12/08 02:56:20 by lbrylins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	atoi(const char *str)
+#include "libft.h"
+
+int	ft_atoi(const char *str)
 {
 	int	num;
-	int	minus;
-	int	cur_num;
+	int	plus_minus_counter;
+	int	min;
 
 	num = 0;
-	minus = 1;
-	while (*str == ' ' || *str == '\n' || *str == '\t'
-		|| *str == '\v' || *str == '\f' || *str == '\r')
+	min = 1;
+	plus_minus_counter = 0;
+	while ((*str >= '\t' && *str <= '\r') || *str == ' ')
 		str++;
-	if (*str == '-')
+	if (*str == '-' || *str == '+')
 	{
-		minus = -1;
+		plus_minus_counter++;
+		if (*str == '-')
+			min *= -1;
 		str++;
 	}
+	if (plus_minus_counter > 1)
+		return (0);
 	while (*str >= '0' && *str <= '9')
 	{
 		num *= 10;
-		cur_num = *str - '0';
-		num += cur_num;
+		num += *str - '0';
 		str++;
 	}
-	return (minus * num);
+	return (min * num);
 }

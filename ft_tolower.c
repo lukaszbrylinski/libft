@@ -6,11 +6,13 @@
 /*   By: lbrylins <lbrylins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:25:28 by lbrylins          #+#    #+#             */
-/*   Updated: 2024/12/04 23:19:18 by lbrylins         ###   ########.fr       */
+/*   Updated: 2024/12/08 02:54:10 by lbrylins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include "libft.h"
+
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		c += 32;

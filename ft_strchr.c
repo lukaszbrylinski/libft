@@ -6,18 +6,25 @@
 /*   By: lbrylins <lbrylins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:26:43 by lbrylins          #+#    #+#             */
-/*   Updated: 2024/12/04 21:35:21 by lbrylins         ###   ########.fr       */
+/*   Updated: 2024/12/08 03:25:27 by lbrylins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strchr(const char *str, int c)
 {
-	c = (unsigned char *)c;
-	while (*str)
+	char	*ptr;
+
+	c = (unsigned char)c;
+	ptr = (char *)str;
+	while (*ptr)
 	{
-		if (*str == c)
-			return (str);
-		str++;
+		if (*ptr == c)
+			return (ptr);
+		ptr++;
 	}
-	return (0);
+	if (c == '\0')
+		return (ptr);
+	return (NULL);
 }

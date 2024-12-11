@@ -6,11 +6,13 @@
 /*   By: lbrylins <lbrylins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 16:45:05 by lbrylins          #+#    #+#             */
-/*   Updated: 2024/12/01 16:47:14 by lbrylins         ###   ########.fr       */
+/*   Updated: 2024/12/08 02:53:06 by lbrylins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_alnum(int c)
+#include "libft.h"
+
+int	ft_isalnum(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
 		|| (c >= '0' && c <= '9'))
