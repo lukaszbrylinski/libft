@@ -6,7 +6,7 @@
 /*   By: lbrylins <lbrylins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 16:53:32 by lbrylins          #+#    #+#             */
-/*   Updated: 2024/12/08 03:49:49 by lbrylins         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:00:10 by lbrylins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	*ft_memset(void *ptr, int value, size_t num)
 {
-	size_t		i;
+	size_t				i;
 	unsigned char		*ch_ptr;
 	unsigned char		val;
 

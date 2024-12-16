@@ -6,7 +6,7 @@
 /*   By: lbrylins <lbrylins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 22:35:15 by lbrylins          #+#    #+#             */
-/*   Updated: 2024/12/11 22:08:23 by lbrylins         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:48:53 by lbrylins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 */
 static int	is_in_set(char c, const char *set)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (set[i])
@@ -110,8 +110,9 @@ static int	is_in_set(char c, const char *set)
 
 static size_t	get_start_index(const char *s1, const char *set)
 {
-	size_t start = 0;
+	size_t	start;
 
+	start = 0;
 	while (s1[start] && is_in_set(s1[start], set))
 		start++;
 	return (start);
@@ -119,8 +120,9 @@ static size_t	get_start_index(const char *s1, const char *set)
 
 static size_t	get_end_index(const char *s1, const char *set)
 {
-	size_t end = strlen(s1);
+	size_t	end;
 
+	end = ft_strlen(s1);
 	while (end > 0 && is_in_set(s1[end - 1], set))
 		end--;
 	return (end);
@@ -131,20 +133,25 @@ char	*ft_strtrim(const char *s1, const char *set)
 	size_t	start;
 	size_t	end;
 	size_t	trim_len;
+	size_t	i;
 	char	*trim_str;
 
+	i = 0;
 	if (!s1 || !set)
 		return (NULL);
 	start = get_start_index(s1, set);
 	end = get_end_index(s1, set);
 	if (start >= end)
-		return (strdup(""));
+		return (ft_strdup(""));
 	trim_len = end - start;
 	trim_str = (char *)malloc(trim_len + 1);
 	if (!trim_str)
 		return (NULL);
-	for (size_t i = 0; i < trim_len; i++)
+	while (i < trim_len)
+	{
 		trim_str[i] = s1[start + i];
+		i++;
+	}
 	trim_str[trim_len] = '\0';
 	return (trim_str);
 }

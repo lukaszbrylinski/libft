@@ -6,7 +6,7 @@
 /*   By: lbrylins <lbrylins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 18:38:57 by lbrylins          #+#    #+#             */
-/*   Updated: 2024/12/08 03:46:15 by lbrylins         ###   ########.fr       */
+/*   Updated: 2024/12/16 18:59:45 by lbrylins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*ch_dest;
 	unsigned char	*ch_src;
 

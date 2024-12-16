@@ -6,7 +6,7 @@
 /*   By: lbrylins <lbrylins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:50:42 by lbrylins          #+#    #+#             */
-/*   Updated: 2024/12/08 03:07:11 by lbrylins         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:04:06 by lbrylins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_memcmp(const void *ptr1, const void *ptr2, size_t num)
 {
 	unsigned char	*char_ptr1;
 	unsigned char	*char_ptr2;
-	size_t	i;
+	size_t			i;
 
 	i = 0;
 	char_ptr1 = (unsigned char *)ptr1;

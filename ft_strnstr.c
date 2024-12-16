@@ -6,7 +6,7 @@
 /*   By: lbrylins <lbrylins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:56:20 by lbrylins          #+#    #+#             */
-/*   Updated: 2024/12/08 03:34:34 by lbrylins         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:04:43 by lbrylins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	while (haystack[i] && i < len)
 	{
 		j = 0;
-		while (needle[j] && haystack[i + j] && (i + j) < len && haystack[i + j] == needle[j])
+		while (needle[j] && haystack[i + j] && (i + j) < len
+			&& haystack[i + j] == needle[j])
 		{
 			j++;
 		}

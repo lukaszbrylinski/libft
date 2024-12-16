@@ -6,7 +6,7 @@
 /*   By: lbrylins <lbrylins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 21:40:32 by lbrylins          #+#    #+#             */
-/*   Updated: 2024/12/08 03:05:36 by lbrylins         ###   ########.fr       */
+/*   Updated: 2024/12/16 18:59:59 by lbrylins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	*ft_memchr(const void *ptr, int value, size_t num)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*char_ptr;
 
 	i = 0;

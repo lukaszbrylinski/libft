@@ -6,7 +6,7 @@
 /*   By: lbrylins <lbrylins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 15:53:24 by lbrylins          #+#    #+#             */
-/*   Updated: 2024/12/08 03:39:49 by lbrylins         ###   ########.fr       */
+/*   Updated: 2024/12/16 19:04:13 by lbrylins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*ch_dest;
 	unsigned char	*ch_src;
 

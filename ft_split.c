@@ -6,84 +6,80 @@
 /*   By: lbrylins <lbrylins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 23:04:32 by lbrylins          #+#    #+#             */
-/*   Updated: 2024/12/08 01:25:11 by lbrylins         ###   ########.fr       */
+/*   Updated: 2024/12/16 21:28:59 by lbrylins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-int	ft_strlen(char *str)
+int	strlen_ft(const char *str, char seperator, int start)
 {
 	int	i;
+	int	len;
 
-	i = 0;
-	while (str[i])
+	i = start;
+	len = 0;
+	while (str[i] && str[i] != seperator)
 	{
 		i++;
+		len++;
 	}
-	return (i);
+	return (len);
 }
 
-int	count_words(char *str, char seperator)
+int	count_words(const char *str, char seperator)
 {
 	int	count;
 
 	count = 0;
-	if (!*str)
-		return (0);
-	if (seperator == NULL)
-		return (1);
 	while (*str)
 	{
 		while (*str == seperator)
 			str++;
-		while (*str != seperator)
-			str++;
-		count++;
+		if (*str)
+		{
+			count++;
+			while (*str != seperator && *str)
+				str++;
+		}
 	}
 	return (count);
 }
 
-int	*words_len(char *str, char seperator)
+char	**cleanup(char **str_arr, int word_num)
 {
-	int	*word_lens;
-	int	word_len;
-	int	i;
-
-	if (!*str)
-		return (0);
-	if (seperator == NULL)
-		return (str_len(str));
-	word_lens = (int)malloc(sizeof(int) * count_words(str, seperator));
-	i = 0;
-	while (*str)
-	{
-		word_len = 0;
-		while (i < count_words(str, seperator))
-		{
-			while (*str == seperator)
-				str++;
-			while (*str != seperator)
-			{
-				str++;
-				word_len++;
-			}
-		}
-	}
+	while (word_num > 0)
+		free(str_arr[word_num--]);
+	free(str_arr);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**str_arr;
-	size_t	word_num;
+	int		word_num;
 	int		i;
+	int		word_len;
 
-	word_num = count_words(s, c);
-	str_arr = (char**)malloc(word_num * sizeof(char *));
+	if (!s)
+		return (NULL);
+	str_arr = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!str_arr)
+		return (NULL);
+	word_num = 0;
 	i = 0;
-	while (str_arr[i])
+	while (word_num < count_words(s, c))
 	{
-		
+		while (s[i] && s[i] == c)
+			i++;
+		word_len = strlen_ft(s, c, i);
+		str_arr[word_num] = ft_substr(s, i, word_len);
+		if (str_arr[word_num] == NULL)
+			return (cleanup(str_arr, word_num));
+		i += word_len;
+		word_num++;
 	}
+	str_arr[word_num] = NULL;
+	return (str_arr);
 }
