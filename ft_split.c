@@ -6,7 +6,7 @@
 /*   By: lbrylins <lbrylins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 23:04:32 by lbrylins          #+#    #+#             */
-/*   Updated: 2024/12/16 21:28:59 by lbrylins         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:09:23 by lbrylins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ char	**ft_split(char const *s, char c)
 	char	**str_arr;
 	int		word_num;
 	int		i;
-	int		word_len;
 
 	if (!s)
 		return (NULL);
@@ -73,11 +72,10 @@ char	**ft_split(char const *s, char c)
 	{
 		while (s[i] && s[i] == c)
 			i++;
-		word_len = strlen_ft(s, c, i);
-		str_arr[word_num] = ft_substr(s, i, word_len);
+		str_arr[word_num] = ft_substr(s, i, strlen_ft(s, c, i));
 		if (str_arr[word_num] == NULL)
 			return (cleanup(str_arr, word_num));
-		i += word_len;
+		i += strlen_ft(s, c, i);
 		word_num++;
 	}
 	str_arr[word_num] = NULL;
