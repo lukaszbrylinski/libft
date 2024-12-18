@@ -6,7 +6,7 @@
 /*   By: lbrylins <lbrylins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 21:30:13 by lbrylins          #+#    #+#             */
-/*   Updated: 2024/12/17 19:25:32 by lbrylins         ###   ########.fr       */
+/*   Updated: 2024/12/18 19:09:07 by lbrylins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ static	int	count_digits(int n)
 		num /= 10;
 		digits++;
 	}
-	digits++;
 	return (digits);
 }
-static	void	*convert(ssize_t n, int digit_count, char *str)
+
+static	void	convert(ssize_t n, int digit_count, char *str)
 {
 	while (0 < digit_count)
 	{
@@ -45,7 +45,7 @@ static	void	*convert(ssize_t n, int digit_count, char *str)
 
 char	*ft_itoa(int n)
 {
-	ssize_t 	num;
+	ssize_t		num;
 	char		*num_str;
 	ssize_t		num_len;
 
@@ -57,18 +57,18 @@ char	*ft_itoa(int n)
 	if (num < 0)
 	{
 		num_str[0] = '-';
-		num = - num;
+		num = -num;
 	}
-	convert(num, num_len - (n < 0), num_str + (n > 0));
+	convert(num, num_len - (n < 0), num_str + (n < 0));
 	num_str[num_len] = '\0';
 	return (num_str);
 }
-
+/*
 int main()
 {
-	int n = -1220;
+	int n = 0;
 	char	*str;
 	str = ft_itoa(n);
 	printf("%s", str);
 	return (0);
-}
+}*/

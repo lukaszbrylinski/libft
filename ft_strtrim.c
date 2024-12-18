@@ -6,7 +6,7 @@
 /*   By: lbrylins <lbrylins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 22:35:15 by lbrylins          #+#    #+#             */
-/*   Updated: 2024/12/16 19:48:53 by lbrylins         ###   ########.fr       */
+/*   Updated: 2024/12/18 19:07:06 by lbrylins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	start = get_start_index(s1, set);
 	end = get_end_index(s1, set);
 	if (start >= end)
-		return (ft_strdup(""));
+		return ((ft_strdup("")));
 	trim_len = end - start;
 	trim_str = (char *)malloc(trim_len + 1);
 	if (!trim_str)
